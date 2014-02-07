@@ -1,4 +1,3 @@
-ubuntu-setup
-============
+# dev-env-setup
 
-Tools to set up a development environment on an Ubuntu machine
+Tools to set up a development environment.

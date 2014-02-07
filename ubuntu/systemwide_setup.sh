@@ -2,7 +2,15 @@
 
 set -e -u -o pipefail -x
 
-sudo apt-get install openssh-server vim git
+packages=(
+curl
+git
+openssh-server
+vim
+wget
+)
+
+sudo apt-get install -y "${packages[@]}"
 
 # Check if the given tarball is OK.
 check_tarball() {
