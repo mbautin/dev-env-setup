@@ -78,3 +78,10 @@ fi
 if ! egrep "^EDITOR=" /etc/environment >/dev/null; then
   sudo bash -c '( echo; echo "EDITOR=/usr/bin/vim" ) >>/etc/environment'
 fi
+
+# Set JAVA_HOME
+
+if ! egrep "^JAVA_HOME=" /etc/environment >/dev/null; then
+  sudo bash -c '( echo; echo "JAVA_HOME=/usr/lib/jvm/default-java" ) >>/etc/environment'
+fi
+
