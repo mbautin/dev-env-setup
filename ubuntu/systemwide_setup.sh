@@ -2,15 +2,9 @@
 
 set -e -u -o pipefail -x
 
-packages=(
-curl
-git
-openssh-server
-vim
-wget
-)
-
-sudo apt-get install -y "${packages[@]}"
+# -------------------------------------------------------------------------------- 
+# Functions
+# -------------------------------------------------------------------------------- 
 
 # Check if the given tarball is OK.
 check_tarball() {
@@ -28,6 +22,23 @@ top_level_dir_from_tarball() {
   fi
   echo "${dir_names_str}"
 }
+
+packages=(
+curl
+git
+openssh-server
+vim
+wget
+)
+
+sudo apt-get install -y "${packages[@]}"
+
+# Turn off dnsmasq caching locally
+# http://www.ubuntugeek.com/how-to-disable-dnsmasq-in-ubuntu-12-04precise.html
+
+sudo sed -i 's/^dns=dnsmasq/#dns=dnsmasq/' /etc/NetworkManager/NetworkManager.conf
+sudo restart network-manager
+
 
 # Oracle JDK
 jdk_tmp_dir="/tmp/oracle_jdk"
