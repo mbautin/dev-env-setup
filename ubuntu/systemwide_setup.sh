@@ -26,9 +26,12 @@ top_level_dir_from_tarball() {
 packages=(
 curl
 git
+libxml2-dev
+libyaml-dev
 openssh-server
 vim
 wget
+zlib1g-dev
 )
 
 sudo apt-get install -y "${packages[@]}"
