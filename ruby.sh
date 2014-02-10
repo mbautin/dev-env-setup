@@ -9,3 +9,4 @@ set +u +x
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 rvm install ${ruby_version}
+
