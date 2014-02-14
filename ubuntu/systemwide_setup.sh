@@ -39,9 +39,10 @@ sudo apt-get install -y "${packages[@]}"
 # Turn off dnsmasq caching locally
 # http://www.ubuntugeek.com/how-to-disable-dnsmasq-in-ubuntu-12-04precise.html
 
-sudo sed -i 's/^dns=dnsmasq/#dns=dnsmasq/' /etc/NetworkManager/NetworkManager.conf
-sudo restart network-manager
-
+if [ -f /etc/NetworkManager/NetworkManager.conf ]; then
+  sudo sed -i 's/^dns=dnsmasq/#dns=dnsmasq/' /etc/NetworkManager/NetworkManager.conf
+  sudo restart network-manager
+fi
 
 # Oracle JDK
 jdk_tmp_dir="/tmp/oracle_jdk"
