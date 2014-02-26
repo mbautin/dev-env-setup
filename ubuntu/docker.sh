@@ -27,4 +27,3 @@ sudo gpasswd -a ${USER} docker
 
 # Restart the Docker daemon.
 sudo service docker restart
-
