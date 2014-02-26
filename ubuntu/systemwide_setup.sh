@@ -26,6 +26,8 @@ top_level_dir_from_tarball() {
 packages=(
 curl
 git
+libcurl4-openssl-dev
+libpq-dev
 libxml2-dev
 libxslt1-dev
 libyaml-dev
