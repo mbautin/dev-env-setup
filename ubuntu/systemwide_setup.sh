@@ -100,6 +100,9 @@ if [ ! -d "${maven_dir_name}" ]; then
   sudo tar xzf "${maven_tmp_dir}/${maven_tarball}"
 fi
 
+if [ ! -f "/usr/local/bin/mvn" ]; then
+  sudo ln -s "/usr/local/${maven_dir_name}/bin/mvn" /usr/local/bin
+fi
 # Set editor
 
 if ! egrep "^EDITOR=" /etc/environment >/dev/null; then
