@@ -6,4 +6,3 @@ if ! grep run_from_bashrc.sh ~/.bashrc >/dev/null; then
   echo >>~/.bashrc
   echo ". $PWD/run_from_bashrc.sh" >>~/.bashrc
 fi
-
